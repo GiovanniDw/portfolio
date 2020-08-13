@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;1,500&display=swap');
+* {
+    box-sizing: border-box;
+}
+img{
+    height: 100%;
+}
+
+ html {
+        box-sizing: border-box;
+       
+       
+        
+    }
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+body {
+font-family: 'Cabin', sans-serif;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App {
+    padding: 0 10%;
+}
+header {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    align-items: center;
+    
+}
+.header-left img {
+    height: 50px ;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+nav.main-nav a {
+   padding:  1em;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body {
+  background: url("/images/bg.svg") no-repeat center fixed ;
+}
+section {
+    height:100vh;
+}
