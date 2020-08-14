@@ -22,13 +22,13 @@ const App = () => {
 			</header>
 			<Menu />
 			<main>
-				<section id='about'>
+				<section id='About'>
 					<h1>
 						Hi👋, <br></br>My name is Giovanni,<br></br> I’m a CMD
 						student
 					</h1>
 				</section>
-				<section id='work'>
+				<section id='Work'>
 					<h2>Work</h2>
 
 					<article></article>
@@ -36,7 +36,7 @@ const App = () => {
 					<article></article>
 					<article></article>
 				</section>
-				<section id='contact'>
+				<section id='Contact'>
 					<h2>Contact</h2>
 				</section>
 			</main>
