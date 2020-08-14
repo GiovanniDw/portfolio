@@ -63,12 +63,13 @@ h1 {
 h1 span.my-name {
     color:darkgray;
     font-weight: 600;
+    font-style: italic;
 }
 h1 span.my-name:before {
     content: 'Giovanni';
     position: absolute;
-    font-style: italic;
-    
+    font-style: normal;
+    font-weight: 600;
      -webkit-text-stroke: 0.000000001em black;
     -webkit-text-fill-color: transparent;
 }
