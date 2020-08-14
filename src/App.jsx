@@ -5,11 +5,16 @@ import './App.css';
 
 const App = () => {
   return (
-		<div className='App'>
+		<div
+			className='App'
+			style={{
+				background: `url(${process.env.PUBLIC_URL + '/images/bg.svg'}) no-repeat center fixed`,
+			}}
+		>
 			<header>
 				<div className='logo'>
 					<img
-						src='/images/logo.svg'
+						src={process.env.PUBLIC_URL + '/images/logo.svg'}
 						className='App-logo'
 						alt='logo'
 					/>
