@@ -9,7 +9,7 @@ const App = () => {
 			<header>
 				<div className='logo'>
 					<img
-						src={'/images/logo.svg'}
+						src='/images/logo.svg'
 						className='App-logo'
 						alt='logo'
 					/>
