@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { Link } from 'react-scroll';
-
+import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 
 class Menu extends Component {
     state = {};
@@ -24,15 +24,15 @@ class Menu extends Component {
 						/>
 					</Link>
 					<Link
-						href='#Work'
-						to='work'
+						href='#Projects'
+						to='projects'
 						spy={true}
 						smooth={true}
 						offset={0}
 						duration={500}
 						hashSpy={true}
 					>
-						Work
+						Projects
 					</Link>
 					<Link
 						href='#Contact'
