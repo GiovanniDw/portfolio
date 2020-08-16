@@ -17,7 +17,7 @@ export function Item({ id }) {
 				style={{ pointerEvents: 'auto' }}
 				className='overlay'
 			>
-				<Link to='/' />
+				<Link to='/#projects' />
 			</motion.div>
 			<div className='card-content-container open'>
 				<motion.div
@@ -30,7 +30,7 @@ export function Item({ id }) {
 					>
 						<img
 							className='card-image'
-							src={`images/${id}.jpg`}
+							src={`images/projects/${id}/${id}.png`}
 							alt=''
 						/>
 					</motion.div>

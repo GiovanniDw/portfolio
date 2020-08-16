@@ -37,16 +37,16 @@ class App extends Component {
 					}) no-repeat 10% fixed`,
 				}}
 			>
-				<Menu />
 				<main>
-					<About />
 					{/* <Projects /> */}
 					<AnimateSharedLayout type='crossfade'>
-						<Router>
+						<Router basename='/portfolio'>
+							<Menu />
+							<About />
 							<Route path={['/:id', '/']} component={Store} />
+							<Contact />
 						</Router>
 					</AnimateSharedLayout>
-					<Contact />
 				</main>
 			</div>
 		);

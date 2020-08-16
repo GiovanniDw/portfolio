@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export default class About extends Component {
     render() {
         return (
-			<motion.section id='About' className='about'>
+			<motion.section id='about' className='about'>
 				<motion.h1>
 					Hi <span role='img'>👋</span>, <br></br>My name is{' '}
 					<motion.span

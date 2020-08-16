@@ -5,7 +5,11 @@ import { motion } from 'framer-motion';
 
 function Card({ id, title, category, theme }) {
 	return (
-		<li className={`card ${theme}`}>
+		<motion.li
+			whileHover={{ scale: 1.05 }}
+			whileTap={{ scale: 0.95 }}
+			className={`card ${theme}`}
+		>
 			<div className='card-content-container'>
 				<motion.div
 					className='card-content'
@@ -17,7 +21,7 @@ function Card({ id, title, category, theme }) {
 					>
 						<img
 							className='card-image'
-							src={`images/${id}.jpg`}
+							src={`images/projects/${id}/${id}.png`}
 							alt=''
 						/>
 					</motion.div>
@@ -31,13 +35,13 @@ function Card({ id, title, category, theme }) {
 				</motion.div>
 			</div>
 			<Link to={id} className={`card-open-link`} />
-		</li>
+		</motion.li>
 	);
 }
 
 export function List({ selectedId }) {
     return (
-      <section id='Projects' className="projects">
+      <section id='projects' className="projects">
 				<h2>Projects</h2>
 		<ul className='card-list'>
 			{items.map((card) => (

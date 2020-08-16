@@ -2,20 +2,24 @@ import React, { Component} from 'react';
 import { Link } from 'react-scroll';
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 
+
+
+
 class Menu extends Component {
     state = {};
     render() {
         return (
 			<aside>
-				<nav className='main-nav'>
+				<motion.nav className='main-nav'>
 					<Link
-						href='#About'
+						href='#about'
 						to='about'
 						spy={true}
 						smooth={true}
 						offset={0}
 						duration={500}
 						hashSpy={true}
+						isDynamic={true}
 					>
 						<img
 							src={process.env.PUBLIC_URL + '/images/logo.svg'}
@@ -24,28 +28,30 @@ class Menu extends Component {
 						/>
 					</Link>
 					<Link
-						href='#Projects'
+						href='#projects'
 						to='projects'
 						spy={true}
 						smooth={true}
-						offset={0}
+						offset={-2}
 						duration={500}
 						hashSpy={true}
+						isDynamic={true}
 					>
-						Projects
+						<span>Projects</span>
 					</Link>
 					<Link
-						href='#Contact'
+						href='#contact'
 						to='contact'
 						spy={true}
 						smooth={true}
 						offset={0}
 						duration={500}
 						hashSpy={true}
+						isDynamic={true}
 					>
 						Contact
 					</Link>
-				</nav>
+				</motion.nav>
 			</aside>
 		);
     }
