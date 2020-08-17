@@ -8,7 +8,7 @@ function Card({ id, title, category, theme }) {
 		<motion.li
 			whileHover={{ scale: 1.05 }}
 			whileTap={{ scale: 0.95 }}
-			className={`card ${theme}`}
+			className={`card ${id}`}
 		>
 			<div className='card-content-container'>
 				<motion.div

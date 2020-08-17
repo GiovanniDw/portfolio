@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { LoremIpsum } from 'react-lorem-ipsum';
 import { Link } from 'react-router-dom';
 import { items } from '../../data';
-
+import { IoIosClose } from 'react-icons/io';
 export function Item({ id }) {
-	const { category, title } = items.find((item) => item.id === id);
+	const { category, title, backgroundColor } = items.find((item) => item.id === id);
 
 	return (
 		<>
@@ -24,7 +24,10 @@ export function Item({ id }) {
 					className='card-content'
 					layoutId={`card-container-${id}`}
 				>
-					<motion.div
+                    <motion.div
+                        style={{
+                            backgroundColor: backgroundColor,
+                        }}
 						className='card-image-container'
 						layoutId={`card-image-container-${id}`}
 					>
@@ -40,6 +43,12 @@ export function Item({ id }) {
 					>
 						<span className='category'>{category}</span>
 						<h2>{title}</h2>
+					</motion.div>
+					<motion.div className='close-icon'>
+						<Link to='/#projects'>
+							{' '}
+							<IoIosClose />{' '}
+						</Link>
 					</motion.div>
 					<motion.div className='content-container' animate>
 						<LoremIpsum
