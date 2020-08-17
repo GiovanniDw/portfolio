@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LoremIpsum } from 'react-lorem-ipsum';
 import { Link } from 'react-router-dom';
 import { items } from '../../data';
 import { IoIosClose } from 'react-icons/io';
 export function Item({ id }) {
-	const { category, title, backgroundColor } = items.find((item) => item.id === id);
+	const { category, title, backgroundColor, text } = items.find((item) => item.id === id);
 
 	return (
 		<>
@@ -51,11 +50,7 @@ export function Item({ id }) {
 						</Link>
 					</motion.div>
 					<motion.div className='content-container' animate>
-						<LoremIpsum
-							p={6}
-							avgWordsPerSentence={6}
-							avgSentencesPerParagraph={4}
-						/>
+						<motion.p>{text}</motion.p>
 					</motion.div>
 				</motion.div>
 			</div>
