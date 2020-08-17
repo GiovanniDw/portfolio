@@ -1,7 +1,26 @@
-// import React, { Component, useState } from 'react';
+import React, { Component, useState } from 'react';
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import { Item } from '../components/Project/Item';
 import { List } from '../components/Project/List';
+
+function Projects({ match }) {
+	let { id } = match.params;
+	const imageHasLoaded = true;
+
+	return (
+		<>
+			<List selectedId={id} />
+			<AnimatePresence>
+				{id && imageHasLoaded && <Item id={id} key='item' />}
+			</AnimatePresence>
+		</>
+	);
+}
+
+export default Projects;
+
+
+
 // import { isTemplateExpression } from 'typescript';
 // // export default class Work extends Component {
 // // 	render() {
@@ -71,21 +90,3 @@ import { List } from '../components/Project/List';
 
 
 
-
-import React from 'react'
-
-function Projects({ match }) {
-	let { id } = match.params;
-	const imageHasLoaded = true;
-
-	return (
-		<>
-			<List selectedId={id} />
-			<AnimatePresence>
-				{id && imageHasLoaded && <Item id={id} key='item' />}
-			</AnimatePresence>
-		</>
-	);
-}
-
-export default Projects

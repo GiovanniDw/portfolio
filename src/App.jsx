@@ -15,9 +15,9 @@ class App extends Component {
 			<div
 				className='App'
 				style={{
-					background: `url(${
-						process.env.PUBLIC_URL + '/images/bg.svg'
-					}) no-repeat 10% fixed`,
+					// background: `url(${
+					// 	process.env.PUBLIC_URL + '/images/bg.svg'
+					// }) no-repeat 10% fixed`,
 				}}
 			>
 				<main>

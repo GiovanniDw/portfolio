@@ -1,7 +1,7 @@
 import React from 'react';
 import { items } from '../../data';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 
 function Card({ id, title, category, theme }) {
 	return (
@@ -42,10 +42,19 @@ function Card({ id, title, category, theme }) {
 
 
 export function List({ selectedId }) {
+	const { scrollYProgress } = useViewportScroll();
+	const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+
     return (
 		<section id='projects' className='projects'>
 			<motion.div className='container'>
-				<motion.h2>Projects</motion.h2>
+				<motion.h2
+					className='section-title'
+					
+					style={{ scale: scale }}
+				>
+					Projects
+				</motion.h2>
 				<ul className='card-list'>
 					{items.map((card) => (
 						<Card

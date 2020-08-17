@@ -30,13 +30,7 @@ font-family: 'Cabin', sans-serif;
     
     margin: 0 auto;
 }
-/* h2   {
 
-    position: sticky;
-    
-    top: 50%;
-    left: 0;
-} */
 header {
     position: fixed;
     
@@ -140,8 +134,9 @@ main {
 
 section {
     height:100vh;
-    /* position: sticky; */
-    
+    position: sticky;
+    background: #fff;
+    overflow: clip;
 
 }
 
@@ -153,12 +148,28 @@ section .container {
   padding-right: 1em;
   padding-left: 3em;
   margin: 0 auto;
+  
 }
+.projects .container, .contact .container {
+    position: relative;
+}
+.projects h2.section-title, .contact h2.section-title {
+    position: sticky;
+    font-size: 6em;
+    top: 20%;
+    opacity: 0.1;
 
+    
+}
 section#about {
     /* display: flex;
     justify-content: left;
     align-items: center; */
+    background:  #ffffff url('/portfolio/images/bg.svg') no-repeat fixed 10% 20%;
+    /* background-image: url('/portfolio/images/bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto; */
 }
 section#about .container {
     display: flex;
