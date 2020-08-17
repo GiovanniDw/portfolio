@@ -6,20 +6,21 @@ import { motion } from 'framer-motion';
 function Card({ id, title, category, theme }) {
 	return (
 		<motion.li
-			whileHover={{ scale: 1.05 }}
-			whileTap={{ scale: 0.95 }}
+			whileHover={{ scale: 0.95 }}
+			whileTap={{ scale: [0.9, 1] }}
 			className={`card ${id}`}
 		>
-			<div className='card-content-container'>
+			<motion.div className='card-content-container'>
 				<motion.div
 					className='card-content'
 					layoutId={`card-container-${id}`}
+					whileHover={{ scale: 2 }}
 				>
 					<motion.div
 						className='card-image-container'
 						layoutId={`card-image-container-${id}`}
 					>
-						<img
+						<motion.img
 							className='card-image'
 							src={`images/projects/${id}/${id}.png`}
 							alt=''
@@ -33,7 +34,7 @@ function Card({ id, title, category, theme }) {
 						<h2>{title}</h2>
 					</motion.div>
 				</motion.div>
-			</div>
+			</motion.div>
 			<Link to={id} className={`card-open-link`} />
 		</motion.li>
 	);
@@ -42,17 +43,19 @@ function Card({ id, title, category, theme }) {
 
 export function List({ selectedId }) {
     return (
-      <section id='projects' className="projects">
-				<h2>Projects</h2>
-		<ul className='card-list'>
-			{items.map((card) => (
-				<Card
-					key={card.id}
-					{...card}
-					isSelected={card.id === selectedId}
-				/>
-			))}
-            </ul>
-            </section>
+		<section id='projects' className='projects'>
+			<motion.div className='container'>
+				<motion.h2>Projects</motion.h2>
+				<ul className='card-list'>
+					{items.map((card) => (
+						<Card
+							key={card.id}
+							{...card}
+							isSelected={card.id === selectedId}
+						/>
+					))}
+				</ul>
+			</motion.div>
+		</section>
 	);
 }

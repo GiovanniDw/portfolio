@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import { motion, useViewportScroll } from 'framer-motion';
 
-export default class Work extends Component {
-	render() {
+const Contact = () => {
+	
+		const { scrollYProgress } = useViewportScroll();
 		return (
 			<section id='contact' className='contact'>
-				<h2>Contact</h2>
+				<motion.div className='container'>
+					<motion.h2 style={{ scaleX: scrollYProgress }}>
+						Contact
+					</motion.h2>
+				</motion.div>
 			</section>
 		);
-	}
+	
 }
+
+export default Contact;

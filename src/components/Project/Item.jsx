@@ -1,11 +1,23 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, {useEffect, useState} from 'react';
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { items } from '../../data';
 import { IoIosClose } from 'react-icons/io';
 export function Item({ id }) {
-	const { category, title, backgroundColor, text } = items.find((item) => item.id === id);
+	const { category, title, backgroundColor, text, url } = items.find((item) => item.id === id);
+const { scrollYProgress } = useViewportScroll();
+const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
 
+const [canScroll, setCanScroll] = useState(false);
+
+useEffect(() => {
+	if (canScroll === false) {
+		document.querySelector('body').classList.add('no-scroll');
+	} else {
+		document.querySelector('body').classList.remove('no-scroll');
+	}
+}, [canScroll]);
+console.log(canScroll)
 	return (
 		<>
 			<motion.div
@@ -16,21 +28,21 @@ export function Item({ id }) {
 				style={{ pointerEvents: 'auto' }}
 				className='overlay'
 			>
-				<Link to='/#projects' />
+				<Link to='/#projects' onClick={() => setCanScroll(true)} />
 			</motion.div>
 			<div className='card-content-container open'>
 				<motion.div
 					className='card-content'
 					layoutId={`card-container-${id}`}
 				>
-                    <motion.div
-                        style={{
-                            backgroundColor: backgroundColor,
-                        }}
+					<motion.div
+						style={{
+							backgroundColor: backgroundColor,
+						}}
 						className='card-image-container'
 						layoutId={`card-image-container-${id}`}
 					>
-						<img
+						<motion.img
 							className='card-image'
 							src={`images/projects/${id}/${id}.png`}
 							alt=''
@@ -44,12 +56,16 @@ export function Item({ id }) {
 						<h2>{title}</h2>
 					</motion.div>
 					<motion.div className='close-icon'>
-						<Link to='/#projects'>
+						<Link
+							to='/#projects'
+							onClick={() => setCanScroll(true)}
+						>
 							{' '}
 							<IoIosClose />{' '}
 						</Link>
 					</motion.div>
 					<motion.div className='content-container' animate>
+						<motion.a href={url}>{url}</motion.a>
 						<motion.p>{text}</motion.p>
 					</motion.div>
 				</motion.div>

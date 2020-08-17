@@ -2,14 +2,14 @@ import React, { Component} from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 
-class Menu extends Component {
-    state = {};
-    render() {
+const Menu = () => {
+    
+    
         return (
-			<motion.aside>
+			<motion.aside transition={{ duration: 0.5 }}>
 				<motion.nav className='main-nav'>
 					<motion.div
-						style={{ scale: 0.4 }}
+						// style={{ scale: 0.4 }}
 						whileHover={{ scale: 0.5 }}
 						whileTap={{ scale: 0.3 }}
 						transition={{ duration: 0.5, delay: 2 }}
@@ -18,6 +18,7 @@ class Menu extends Component {
 							duration: 0.5,
 							delay: 4,
 						}}
+						className='logo-container'
 					>
 						<Link
 							href='#about'
@@ -29,11 +30,11 @@ class Menu extends Component {
 							hashSpy={true}
 							isDynamic={true}
 						>
-							<img
+							<motion.img
 								src={
 									process.env.PUBLIC_URL + '/images/logo.svg'
 								}
-								className='App-logo'
+								className='logo'
 								alt='logo'
 							/>
 						</Link>
@@ -89,7 +90,7 @@ class Menu extends Component {
 				</motion.nav>
 			</motion.aside>
 		);
-    }
+
 }
 
 
