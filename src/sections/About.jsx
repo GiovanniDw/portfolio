@@ -12,7 +12,7 @@ export default class About extends Component {
                         y: [200,0]
                     }}
       >
-					Hi <span role='img'>👋</span>, <br></br>My name is{' '}
+					Hi <span role='img' aria-label='hi'>👋</span>, <br></br>My name is{' '}
 					<motion.span
 						className='my-name'
 					>

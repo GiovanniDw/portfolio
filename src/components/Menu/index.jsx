@@ -1,11 +1,6 @@
 import React, { Component} from 'react';
 import { Link } from 'react-scroll';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
-
-
-const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
-
-
+import { motion } from 'framer-motion';
 
 class Menu extends Component {
     state = {};

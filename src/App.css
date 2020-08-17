@@ -18,6 +18,7 @@ img{
 
 body {
 font-family: 'Cabin', sans-serif;
+-webkit-overflow-scrolling: touch;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -229,7 +230,7 @@ li {
 
 .open .card-content {
   height: auto;
-  max-width: 1200px;
+  max-width: 800px;
   overflow: hidden;
   /* pointer-events: auto;
   bottom: 0; */
@@ -248,7 +249,7 @@ li {
   top: 0;
   left: 0;
   overflow: visible;
-  height: 420px;
+  height: 440px;
   width: 100vw;
 }
 

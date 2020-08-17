@@ -39,6 +39,7 @@ function Card({ id, title, category, theme }) {
 	);
 }
 
+
 export function List({ selectedId }) {
     return (
       <section id='projects' className="projects">

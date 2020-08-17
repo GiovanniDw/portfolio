@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import Menu from './components/Menu';
 import About from './sections/About';
-import Projects from './sections/Projects';
+// import Projects from './sections/Projects';
 import { Item } from './components/Project/Item';
 import { List } from './components/Project/List';
 
